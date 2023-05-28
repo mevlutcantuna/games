@@ -2,21 +2,22 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../../app/store"
 
 const initialState = {
-    name: "can tuna",
+    coins: 0,
 }
 
 const slotMachineSlice = createSlice({
     name: "slotMachine",
     initialState,
     reducers: {
-        setName: (state, action: PayloadAction<string>) => {
-            state.name = action.payload
+        setCoins: (state, action: PayloadAction<number>) => {
+            sessionStorage.setItem("coins", JSON.stringify(action.payload))
+            state.coins = action.payload
         },
     },
 })
 
-export const { setName } = slotMachineSlice.actions
+export const { setCoins } = slotMachineSlice.actions
 
-export const selectName = (state: RootState) => state.slotMachine.name
+export const selectCoins = (state: RootState) => state.slotMachine.coins
 
 export default slotMachineSlice.reducer

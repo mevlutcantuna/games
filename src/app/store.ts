@@ -1,10 +1,12 @@
 import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
 import slotMachineSlice from "../features/slotMachine/slotMachineSlice"
+import GamesSlice from "../features/games/GamesSlice"
 
 export const store = configureStore({
     reducer: {
         slotMachine: slotMachineSlice,
+        games: GamesSlice,
     },
 })
 

@@ -7,17 +7,23 @@ import reportWebVitals from "./reportWebVitals"
 import { Provider } from "react-redux"
 import { store } from "./app/store"
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import Layout from "./app/components/Layout"
 
 const root = ReactDOM.createRoot(document.getElementById("root")!)
 
 const router = createBrowserRouter([
     {
-        path: "/",
-        element: <App />,
-    },
-    {
-        path: "/game/:id",
-        element: <GameLayout />,
+        element: <Layout />,
+        children: [
+            {
+                path: "/",
+                element: <App />,
+            },
+            {
+                path: "/game/:id",
+                element: <GameLayout />,
+            },
+        ],
     },
 ])
 

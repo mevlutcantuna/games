@@ -15,7 +15,6 @@
         "plugin:@typescript-eslint/strict",
         "plugin:testing-library/react",
         "plugin:react-hooks/recommended",
-        "plugin:prettier/recommended",
         "prettier"
     ],
     "overrides": [],

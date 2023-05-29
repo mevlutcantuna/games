@@ -6,9 +6,7 @@ import { useAppDispatch } from "../../app/hooks"
 import { setCoins } from "./slotMachineSlice"
 
 const SlotMachine = () => {
-    const coins = JSON.parse(
-        sessionStorage.getItem("coins")!,
-    ) as number
+    const coins = JSON.parse(sessionStorage.getItem("coins")!) as number
     const reel1Ref = useRef<HTMLDivElement>(null)
     const reel2Ref = useRef<HTMLDivElement>(null)
     const reel3Ref = useRef<HTMLDivElement>(null)
@@ -21,16 +19,16 @@ const SlotMachine = () => {
     }, [])
 
     const checkAwards = (fruit1: string, fruit2: string, fruit3: string) => {
-        if (fruit1 === "🍎" && fruit2 === "🍎" && fruit3 == "🍎") {
+        if (fruit1 === "🍏" && fruit2 === "🍏" && fruit3 === "🍏") {
             dispatch(setCoins(coins + 20))
             return toast.success("You won 20 Coins !")
-        } else if (fruit1 == "🍒" && fruit2 == "🍒" && fruit2 == "🍒") {
+        } else if (fruit1 === "🍒" && fruit2 === "🍒" && fruit3 === "🍒") {
             dispatch(setCoins(coins + 50))
             return toast.success("You won 50 Coins !")
-        } else if (fruit1 === "🍌" && fruit2 === "🍌" && fruit3 == "🍌") {
+        } else if (fruit1 === "🍌" && fruit2 === "🍌" && fruit3 === "🍌") {
             dispatch(setCoins(coins + 15))
             return toast.success("You won 15 Coins !")
-        } else if (fruit1 === "🍋" && fruit2 === "🍋" && fruit3 == "🍋") {
+        } else if (fruit1 === "🍋" && fruit2 === "🍋" && fruit3 === "🍋") {
             dispatch(setCoins(coins + 3))
             return toast.success("You won 3 Coins !")
         } else if (
@@ -40,8 +38,8 @@ const SlotMachine = () => {
             dispatch(setCoins(coins + 40))
             return toast.success("You won 40 Coins !")
         } else if (
-            (fruit1 === "🍎" && fruit2 === "🍎") ||
-            (fruit2 === "🍎" && fruit3 === "🍎")
+            (fruit1 === "🍏" && fruit2 === "🍏") ||
+            (fruit2 === "🍏" && fruit3 === "🍏")
         ) {
             dispatch(setCoins(coins + 10))
             return toast.success("You won 10 Coins !")

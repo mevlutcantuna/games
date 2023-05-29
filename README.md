@@ -23,7 +23,7 @@ To setup the project, run the following on your terminal in the order:
 ```
 
 ```
-    cd kanon-gaming
+    cd games
 ```
 
 ```

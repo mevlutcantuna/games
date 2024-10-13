@@ -1,4 +1,4 @@
-## Games
+# Games
 
 Demo: https://games-mct.vercel.app/
 
